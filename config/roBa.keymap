@@ -16,9 +16,9 @@
     combos {
         compatible = "zmk,combos";
 
-        tab {
-            bindings = <&kp TAB>;
-            key-positions = <11 12>;
+        esc {
+            bindings = <&kp ESC>;
+            key-positions = <0 1>;
         };
 
         shift_tab {
@@ -27,7 +27,7 @@
         };
 
         muhennkann {
-            bindings = <&to_layer_0 INT_MUHENKAN>;
+            bindings = <&to_layer_0 TAB>;
             key-positions = <11 10>;
         };
 
@@ -42,7 +42,7 @@
         };
 
         lanlan2 {
-            bindings = <&kp LANGUAGE_2>;
+            bindings = <&kp LANGUAGE_5>;
             key-positions = <13 12>;
         };
 
@@ -70,6 +70,11 @@
             bindings = <&kp LC(V)>;
             key-positions = <25 26>;
         };
+
+        bluetoothGo {
+            bindings = <&to 6>;
+            key-positions = <32 42>;
+        };
     };
 
     macros {
@@ -78,6 +83,13 @@
             #binding-cells = <1>;
             bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
             label = "TO_LAYER_0";
+        };
+
+        muhenkan_at: muhenkan_at {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp INT_MUHENKAN &kp AT_SIGN>;
+            label = "MUHENKAN_AT";
         };
     };
 
@@ -97,10 +109,10 @@
 
         default_layer {
             bindings = <
-&kp Q             &kp W         &kp E         &kp R                        &kp T                                                          &kp Y        &kp U  &kp I      &kp O    &lt 6 P
-&kp A             &kp S         &kp D         &kp F                        &kp G        &kp ESC                            &kp MINUS      &kp H        &kp J  &kp K      &kp L    &lt 5 MINUS
-&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V                        &kp B        &kp TAB                            &kp SEMICOLON  &kp N        &kp M  &kp COMMA  &kp DOT  &kp SLASH
-&kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt_to_layer_0 2 INT_HENKAN  &lt 2 SPACE  &lt_to_layer_0 1 INT_MUHENKAN      &kp BACKSPACE  &lt 3 ENTER                             &kp AT
+&kp Q             &kp W         &kp E         &kp R                          &kp T                                                                 &kp Y        &kp U             &kp I      &kp O    &kp P
+&kp A             &kp S         &kp D         &mt LEFT_SHIFT F               &kp G        &kp EXCLAMATION                           &kp MINUS      &kp H        &mt LEFT_SHIFT J  &kp K      &kp L    &lt 5 MINUS
+&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V                          &kp B        &kp QMARK                                 &kp SEMICOLON  &kp N        &mt LCTRL M       &kp COMMA  &kp DOT  &kp SLASH
+&kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt_to_layer_0 2 INT_MUHENKAN  &lt 2 SPACE  &lt_to_layer_0 1 LANG_ZENKAKUHANKAKU      &kp BACKSPACE  &lt 3 ENTER                                        &muhenkan_at
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
@@ -118,7 +130,7 @@
         NUM {
             bindings = <
 &kp MINUS      &kp KP_NUMBER_7   &kp HASH      &kp DOLLAR                &kp PERCENT                                                        &kp KP_MINUS     &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp BACKSPACE
-&kp INT_YEN    &kp EXCLAMATION   &kp UNDER     &kp KP_EQUAL              &kp ASTERISK          &kp LC(LA(KP_NUMBER_0))      &kp UNDERSCORE  &kp PLUS         &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp ENTER
+&kp INT_YEN    &kp EXCLAMATION   &kp UNDER     &kp KP_EQUAL              &kp COLON             &kp LC(LA(KP_NUMBER_0))      &kp UNDERSCORE  &kp PLUS         &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp ENTER
 &kp AMPERSAND  &kp SINGLE_QUOTE  &kp ASTERISK  &kp RS(LEFT_PARENTHESIS)  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS        &trans          &kp SLASH        &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp PERIOD
 &trans         &trans            &trans        &trans                    &trans                &trans                       &trans          &kp KP_NUMBER_0                                                     &kp COMMA
             >;
@@ -126,10 +138,10 @@
 
         ARROW {
             bindings = <
-&kp ESCAPE        &kp LC(LS(TAB))  &kp UP_ARROW    &kp LC(TAB)      &trans                                         &kp LC(KP_MINUS)  &kp LC(HOME)  &kp LG(LS(S))  &kp LC(HOME)  &kp BACKSPACE
-&kp HOME          &kp LEFT_ARROW   &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp END  &kp LC(PAGE_UP)        &kp PAGE_UP    &kp LC(KP_PLUS)   &kp HOME      &kp UP_ARROW   &kp END       &kp ENTER
-&mt LEFT_SHIFT Z  &trans           &trans          &trans           &trans   &kp LC(PAGE_DOWN)      &kp PAGE_DOWN  &trans            &kp LEFT      &kp DOWN       &kp RIGHT     &kp DELETE
-&trans            &trans           &trans          &trans           &trans   &trans                 &trans         &trans                                                       &kp F2
+&kp ESCAPE        &kp LC(LS(TAB))  &kp UP_ARROW    &kp LC(TAB)      &trans                                                  &kp LC(KP_MINUS)  &kp LC(HOME)  &kp LG(LS(S))  &kp LC(HOME)  &kp BACKSPACE
+&kp HOME          &kp LEFT_ARROW   &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp LC(NUMBER_5)  &kp LC(PAGE_UP)        &kp PAGE_UP    &kp LC(KP_PLUS)   &kp HOME      &kp UP_ARROW   &kp END       &kp ENTER
+&mt LEFT_SHIFT Z  &trans           &trans          &trans           &trans            &kp LC(PAGE_DOWN)      &kp PAGE_DOWN  &trans            &kp LEFT      &kp DOWN       &kp RIGHT     &kp DELETE
+&trans            &trans           &trans          &trans           &trans            &trans                 &trans         &trans                                                       &kp F2
             >;
 
             sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
@@ -137,10 +149,10 @@
 
         MOUSE {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans    &trans    &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1  &mkp MB3  &mkp MB2  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans    &trans    &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                &trans
+&trans  &trans  &trans  &trans  &trans                      &trans  &trans    &trans    &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1  &mkp MB2  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans    &trans    &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                              &trans
             >;
         };
 
@@ -155,10 +167,10 @@
 
         layer_6 {
             bindings = <
-&trans  &trans        &trans        &trans        &trans                           &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
-&trans  &trans        &trans        &trans        &trans  &trans      &trans       &trans        &trans        &trans        &trans        &trans
-&trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans  &trans      &bootloader  &trans        &trans        &trans        &trans        &bt BT_CLR
-&trans  &trans        &trans        &trans        &trans  &trans      &trans       &trans                                                  &bt BT_CLR_ALL
+&trans  &trans  &trans  &trans  &trans                      &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans        &trans        &trans        &trans        &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &to 0   &trans        &trans        &trans        &trans        &bt BT_CLR
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                                  &bt BT_CLR_ALL
             >;
         };
     };
