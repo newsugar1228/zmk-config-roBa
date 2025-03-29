@@ -60,6 +60,11 @@
             bindings = <&to 6>;
             key-positions = <32 42>;
         };
+
+        ControlY {
+            bindings = <&kp LC(Y)>;
+            key-positions = <5 6>;
+        };
     };
 
     macros {
@@ -73,8 +78,15 @@
         muhenkan_at: muhenkan_at {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp INT_MUHENKAN &kp LEFT_BRACKET>;
+            bindings = <&kp LANGUAGE_2 &kp LEFT_BRACKET>;
             label = "MUHENKAN_AT";
+        };
+
+        Doc_Open: Doc_Open {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none>;
+            label = "DOC_OPEN";
         };
     };
 
@@ -94,8 +106,8 @@
 
         default_layer {
             bindings = <
-&kp Q             &kp W         &kp E         &kp R                          &kp T                                                                 &kp Y        &kp U             &kp I      &kp O    &kp P
-&kp A             &kp S         &kp D         &mt LEFT_SHIFT F               &kp G        &kp EXCLAMATION                           &kp MINUS      &kp H        &mt LEFT_SHIFT J  &kp K      &kp L    &lt 5 MINUS
+&kp Q             &kp W         &kp E         &kp R                          &kp T                                                                 &kp Y        &kp U             &kp I      &lt 5 O  &kp P
+&kp A             &kp S         &kp D         &mt LEFT_SHIFT F               &kp G        &kp EXCLAMATION                           &kp COLON      &kp H        &mt LEFT_SHIFT J  &kp K      &kp L    &kp MINUS
 &mt LEFT_SHIFT Z  &kp X         &kp C         &kp V                          &kp B        &kp QMARK                                 &kp SEMICOLON  &kp N        &mt LCTRL M       &kp COMMA  &kp DOT  &mt LEFT_SHIFT SLASH
 &kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt_to_layer_0 2 INT_MUHENKAN  &lt 2 SPACE  &lt_to_layer_0 1 LANG_ZENKAKUHANKAKU      &kp BACKSPACE  &lt 3 ENTER                                        &muhenkan_at
             >;
@@ -115,8 +127,8 @@
         NUM {
             bindings = <
 &kp MINUS      &kp KP_NUMBER_7   &kp TILDE     &kp DOLLAR                &kp PERCENT                                                         &kp KP_MINUS     &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp BACKSPACE
-&kp INT_YEN    &kp EXCLAMATION   &kp UNDER     &kp KP_EQUAL              &kp COLON             &kp LC(LA(KP_NUMBER_0))      &kp UNDERSCORE   &kp PLUS         &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp ENTER
-&kp AMPERSAND  &kp SINGLE_QUOTE  &kp ASTERISK  &kp RS(LEFT_PARENTHESIS)  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS        &kp KP_ASTERISK  &kp SLASH        &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp PERIOD
+&kp INT_YEN    &kp EXCLAMATION   &kp UNDER     &kp KP_EQUAL              &kp LC(COLON)         &kp LC(LA(KP_NUMBER_0))      &kp UNDERSCORE   &kp PLUS         &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp ENTER
+&kp AMPERSAND  &kp SINGLE_QUOTE  &kp ASTERISK  &kp RS(LEFT_PARENTHESIS)  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS        &kp KP_ASTERISK  &kp KP_DIVIDE    &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp PERIOD
 &trans         &trans            &trans        &trans                    &trans                &trans                       &trans           &kp KP_NUMBER_0                                                     &kp COMMA
             >;
         };
@@ -134,10 +146,10 @@
 
         MOUSE {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans    &trans    &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1  &mkp MB2  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans    &trans    &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                              &trans
+&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &mkp MB1  &trans  &mkp MB2
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans    &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans    &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                            &trans
             >;
         };
 
