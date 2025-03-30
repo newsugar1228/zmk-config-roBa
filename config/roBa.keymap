@@ -88,6 +88,13 @@
             bindings = <&none>;
             label = "DOC_OPEN";
         };
+
+        muhenkan_underbar: muhenkan_underbar {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LANGUAGE_2 &kp EQUAL>;
+            label = "MUHENKAN_UNDERBAR";
+        };
     };
 
     behaviors {
@@ -126,10 +133,10 @@
 
         NUM {
             bindings = <
-&kp MINUS      &kp KP_NUMBER_7   &kp TILDE     &kp DOLLAR                &kp PERCENT                                                         &kp KP_MINUS     &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp BACKSPACE
-&kp INT_YEN    &kp EXCLAMATION   &kp UNDER     &kp KP_EQUAL              &kp LC(COLON)         &kp LC(LA(KP_NUMBER_0))      &kp KP_EQUAL     &kp KP_PLUS      &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp ENTER
-&kp AMPERSAND  &kp SINGLE_QUOTE  &kp ASTERISK  &kp RS(LEFT_PARENTHESIS)  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS        &kp KP_ASTERISK  &kp KP_DIVIDE    &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp PERIOD
-&trans         &trans            &trans        &trans                    &trans                &trans                       &trans           &kp KP_NUMBER_0                                                     &kp COMMA
+&kp MINUS      &kp KP_NUMBER_7   &kp TILDE           &kp DOLLAR                &kp PERCENT                                                  &kp KP_MINUS     &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp BACKSPACE
+&kp INT_YEN    &kp EXCLAMATION   &muhenkan_underbar  &kp KP_EQUAL              &kp LC(COLON)  &kp LC(LA(KP_NUMBER_0))      &kp KP_EQUAL     &kp KP_PLUS      &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp ENTER
+&kp AMPERSAND  &kp SINGLE_QUOTE  &kp ASTERISK        &kp RS(LEFT_PARENTHESIS)  &kp ASTRK      &kp RS(N0)                   &kp KP_ASTERISK  &kp KP_DIVIDE    &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp PERIOD
+&trans         &trans            &trans              &trans                    &trans         &trans                       &trans           &kp KP_NUMBER_0                                                     &kp COMMA
             >;
         };
 
@@ -146,10 +153,10 @@
 
         MOUSE {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &mkp MB1  &trans  &mkp MB2
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans    &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans    &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                            &trans
+&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &mkp MB1  &trans    &mkp MB2
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans    &trans    &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &mkp MB4  &mkp MB5  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                              &trans
             >;
         };
 
