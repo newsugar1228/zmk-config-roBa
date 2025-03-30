@@ -4,6 +4,7 @@
 #include <dt-bindings/zmk/pointing.h>
 
 // OS設定を日本語キーボードのまま使用するための変換定義
+
 #define JP_DQUOTE       AT
 #define JP_AMPERSAND    CARET
 #define JP_QUOTE        AMPERSAND
@@ -25,9 +26,10 @@
 #define JP_RPAREN       LEFT_PARENTHESIS
 #define JP_LBRACE       RIGHT_BRACE
 #define JP_RBRACE       PIPE
-#define JP_KANA         LANGUAGE_1 
-#define JP_EISU         LANGUAGE_2 
-#define JP_HANZEN       GRAVE 
+#define JP_KANA         LANGUAGE_1
+#define JP_EISU         LANGUAGE_2
+#define JP_HANZEN       GRAVE
+
 //
 
 #define MOUSE 4
@@ -91,6 +93,16 @@
         ControlY {
             bindings = <&kp LC(Y)>;
             key-positions = <5 6>;
+        };
+
+        parentheses {
+            bindings = <&parentheses>;
+            key-positions = <17 18>;
+        };
+
+        brackets {
+            bindings = <&brackets>;
+            key-positions = <29 30>;
         };
     };
 
@@ -190,6 +202,7 @@
                 <&macro_release>,
                 <&macro_param_1to1 &mo MACRO_PLACEHOLDER>,
                 <&macro_tap>;
+
             label = "MO_exit_AML";
         };
 
@@ -238,7 +251,6 @@
         //     quick-tap-ms = <200>;
         //     flavor = "balanced";
         // };
-
         // lt_exit_AML_on_hold: lt_exit_AML_on_hold {
         //     compatible = "zmk,behavior-hold-tap";
         //     label = "LT_exit_AML_ON_HOLD";
@@ -248,7 +260,6 @@
         //     quick-tap-ms = <200>;
         //     flavor = "balanced";
         // };
-
         // mt_exit_AML: mt_exit_AML {
         //     compatible = "zmk,behavior-hold-tap";
         //     label = "MT_exit_AML";
@@ -263,6 +274,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "MT_exit_AML_ON_TAP";
             bindings = <&kp>, <&kp_exit_AML>;
+
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             flavor = "balanced";
@@ -326,10 +338,10 @@
 
         MOUSE {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &mkp MB1  &mkp MB2  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans    &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &mkp MB4  &mkp MB5  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                              &trans
+&kp_exit_AML Q  &kp_exit_AML W  &kp_exit_AML E  &kp_exit_AML R  &kp_exit_AML T                      &kp_exit_AML Y  &kp_exit_AML U  &mkp MB1        &mkp MB2        &kp_exit_AML P
+&kp_exit_AML A  &kp_exit_AML S  &kp_exit_AML D  &kp_exit_AML F  &kp_exit_AML G  &trans      &trans  &kp_exit_AML H  &kp_exit_AML J  &kp_exit_AML K  &kp_exit_AML L  &trans
+&kp_exit_AML Z  &kp_exit_AML X  &kp_exit_AML C  &kp_exit_AML V  &kp_exit_AML B  &trans      &trans  &kp_exit_AML N  &kp_exit_AML M  &mkp MB4        &mkp MB5        &trans
+&trans          &trans          &trans          &trans          &trans          &trans      &trans  &trans                                                          &trans
             >;
         };
 
