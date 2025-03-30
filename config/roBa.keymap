@@ -336,7 +336,7 @@
 &kp Q             &kp W         &kp E         &kp R                          &kp T                                                                 &kp Y        &kp U             &kp I      &kp O    &kp P
 &kp A             &kp S         &kp D         &mt LEFT_SHIFT F               &kp G        &kp EXCLAMATION                           &kp COLON      &kp H        &mt LEFT_SHIFT J  &kp K      &kp L    &lt 5 MINUS
 &mt LEFT_SHIFT Z  &kp X         &kp C         &kp V                          &kp B        &kp QMARK                                 &kp SEMICOLON  &kp N        &mt LCTRL M       &kp COMMA  &kp DOT  &mt LEFT_SHIFT SLASH
-&kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt_to_layer_0 3 INT_MUHENKAN  &lt 3 SPACE  &lt_to_layer_0 1 LANG_ZENKAKUHANKAKU      &kp BACKSPACE  &lt 4 ENTER                                        &muhenkan_at
+&kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt_to_layer_0 3 INT_MUHENKAN  &lt 3 SPACE  &lt_to_layer_0 1 LANG_ZENKAKUHANKAKU      &kp BACKSPACE  &lt 3 ENTER                                        &muhenkan_at
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
