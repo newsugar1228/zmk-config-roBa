@@ -129,7 +129,7 @@
                 <&macro_wait_time 300>,
                 <&kp LG(R)>,
                 <&macro_wait_time 300>,
-                <&kp LC(V)>;
+                <&kp LC(V) &kp KP_ENTER>;
 
             label = "DOC_OPEN";
         };
@@ -137,21 +137,21 @@
         muhenkan_underbar: muhenkan_underbar {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LANGUAGE_2 &kp EQUAL>;
+            bindings = <&kp LANGUAGE_2 &kp LS(MINUS)>;
             label = "MUHENKAN_UNDERBAR";
         };
 
         parentheses: parentheses {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp JP_LPAREN &kp JP_RPAREN &kp_exit_AML LEFT>;
+            bindings = <&kp LANGUAGE_2 &kp JP_LPAREN &kp JP_RPAREN &kp_exit_AML LEFT>;
             label = "PARENTHESES";
         };
 
         brackets: brackets {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp JP_LBRACKET &kp JP_RBRACKET &kp_exit_AML LEFT>;
+            bindings = <&kp LANGUAGE_2 &kp JP_LBRACKET &kp JP_RBRACKET &kp_exit_AML LEFT>;
             label = "BRACKETS";
         };
 
@@ -248,8 +248,8 @@
             #binding-cells = <0>;
             bindings =
                 <&kp LG(R)>,
-                <&macro_wait_time 300>,
-                <&kp B &kp L &kp U &kp E &kp T &kp O &kp O &kp T &kp H>;
+                <&macro_wait_time 500>,
+                <&kp B &kp L &kp U &kp E &kp T &kp O &kp O &kp T &kp H &kp KP_ENTER>;
 
             label = "BLUETOOTH";
         };
@@ -259,10 +259,17 @@
             #binding-cells = <0>;
             bindings =
                 <&kp LG(R)>,
-                <&macro_wait_time 300>,
-                <&kp N &kp O &kp T &kp E &kp P &kp A &kp D>;
+                <&macro_wait_time 500>,
+                <&kp N &kp O &kp T &kp E &kp P &kp A &kp D &kp KP_ENTER>;
 
             label = "NOTEPAD";
+        };
+
+        kp_equal: kp_equal {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LANGUAGE_2 &kp RS(CARET)>;
+            label = "KP_EQUAL";
         };
 
         // Commented out as currently unused, but may be used in the future 
@@ -330,8 +337,6 @@
             flavor = "balanced";
             quick-tap-ms = <200>;
         };
-
-
     };
 
     behaviors {
@@ -350,10 +355,10 @@
 
         default_layer {
             bindings = <
-&kp Q             &kp W         &kp E         &kp R               &kp T                                                      &kp Y        &kp U             &kp I      &kp O    &kp P
-&kp A             &kp S         &kp D         &mt LEFT_SHIFT F    &kp G        &kp EXCLAMATION                &kp COLON      &kp H        &mt LEFT_SHIFT J  &kp K      &kp L    &lt 5 MINUS
-&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V               &kp B        &kp QMARK                      &kp SEMICOLON  &kp N        &mt LCTRL M       &kp COMMA  &kp DOT  &mt LEFT_SHIFT SLASH
-&kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt 2 INT_MUHENKAN  &lt 3 SPACE  &lt 1 LANG_ZENKAKUHANKAKU      &kp BACKSPACE  &lt 3 ENTER                                        &muhenkan_at
+&kp Q             &kp W         &kp E         &kp R               &kp T                                                         &kp Y        &kp U             &kp I      &kp O    &kp P
+&kp A             &kp S         &kp D         &mt LEFT_SHIFT F    &kp G        &kp EXCLAMATION                &kp SINGLE_QUOTE  &kp H        &mt LEFT_SHIFT J  &kp K      &kp L    &lt 5 MINUS
+&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V               &kp B        &kp QMARK                      &kp SEMICOLON     &kp N        &mt LCTRL M       &kp COMMA  &kp DOT  &mt LEFT_SHIFT SLASH
+&kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt 2 INT_MUHENKAN  &lt 3 SPACE  &lt 1 LANG_ZENKAKUHANKAKU      &kp BACKSPACE     &lt 3 ENTER                                        &muhenkan_at
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
@@ -371,7 +376,7 @@
         NUM {
             bindings = <
 &kp MINUS      &kp KP_NUMBER_7   &kp TILDE           &kp DOLLAR                &kp PERCENT                                                  &kp KP_MINUS     &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp BACKSPACE
-&kp INT_YEN    &kp EXCLAMATION   &muhenkan_underbar  &kp KP_EQUAL              &kp LC(COLON)  &kp LC(LA(KP_NUMBER_0))      &kp KP_EQUAL     &kp KP_PLUS      &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp ENTER
+&kp INT_YEN    &kp EXCLAMATION   &muhenkan_underbar  &kp KP_EQUAL              &kp LC(COLON)  &kp LC(LA(KP_NUMBER_0))      &kp_equal        &kp KP_PLUS      &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp ENTER
 &kp AMPERSAND  &kp SINGLE_QUOTE  &kp ASTERISK        &kp RS(LEFT_PARENTHESIS)  &kp ASTRK      &kp RS(N0)                   &kp KP_ASTERISK  &kp KP_DIVIDE    &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp PERIOD
 &trans         &trans            &trans              &trans                    &trans         &trans                       &trans           &kp KP_NUMBER_0                                                     &kp COMMA
             >;
@@ -390,10 +395,10 @@
 
         MOUSE {
             bindings = <
-&kp_exit_AML Q  &kp_exit_AML W  &kp_exit_AML E  &kp_exit_AML R  &kp_exit_AML T                      &kp_exit_AML Y  &kp_exit_AML U  &kp I     &kp O           &kp_exit_AML P
-&kp_exit_AML A  &kp_exit_AML S  &kp_exit_AML D  &kp_exit_AML F  &kp_exit_AML G  &trans      &trans  &kp_exit_AML H  &mkp MB1        &mkp MB2  &kp_exit_AML L  &trans
-&kp_exit_AML Z  &kp_exit_AML X  &kp_exit_AML C  &kp_exit_AML V  &kp_exit_AML B  &trans      &trans  &kp_exit_AML N  &kp_exit_AML M  &mkp MB4  &mkp MB5        &trans
-&trans          &trans          &trans          &trans          &trans          &trans      &trans  &trans                                                    &trans
+&kp_exit_AML Q  &kp_exit_AML W  &kp_exit_AML E  &kp_exit_AML R  &kp_exit_AML T                         &kp_exit_AML Y  &kp_exit_AML U     &kp_exit_AML I     &kp_exit_AML O     &kp_exit_AML P
+&kp_exit_AML A  &kp_exit_AML S  &kp_exit_AML D  &trans          &kp_exit_AML G  &trans      &exit_AML  &kp_exit_AML H  &mkp_exit_AML MB1  &mkp_exit_AML MB2  &kp_exit_AML L     &trans
+&trans          &kp_exit_AML X  &kp_exit_AML C  &kp_exit_AML V  &kp_exit_AML B  &trans      &exit_AML  &kp_exit_AML N  &trans             &mkp_exit_AML MB4  &mkp_exit_AML MB5  &trans
+&trans          &trans          &trans          &trans          &trans          &trans      &trans     &trans                                                                   &trans
             >;
         };
 
