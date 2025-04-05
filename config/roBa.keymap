@@ -247,8 +247,8 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&kp LG(R)>,
-                <&macro_wait_time 500>,
+                <&kp LEFT_WIN>,
+                <&macro_wait_time 0>,
                 <&kp B &kp L &kp U &kp E &kp T &kp O &kp O &kp T &kp H &kp KP_ENTER>;
 
             label = "BLUETOOTH";
@@ -384,10 +384,10 @@
 
         ARROW {
             bindings = <
-&kp ESCAPE        &kp LC(LS(TAB))  &bluetooth      &notepad    &Doc_Open                                                &kp LC(KP_MINUS)  &kp LC(HOME)  &kp LG(LS(S))  &kp LC(HOME)  &kp BACKSPACE
-&kp HOME          &kp LEFT_ARROW   &kp DOWN_ARROW  &kp LC(N5)  &kp LC(SEMICOLON)  &kp LC(PAGE_UP)        &kp PAGE_UP    &kp LC(KP_PLUS)   &kp HOME      &kp UP_ARROW   &kp END       &kp ENTER
-&mt LEFT_SHIFT Z  &kp LC(X)        &kp LC(C)       &kp LC(V)   &trans             &kp LC(PAGE_DOWN)      &kp PAGE_DOWN  &trans            &kp LEFT      &kp DOWN       &kp RIGHT     &kp DELETE
-&trans            &trans           &trans          &trans      &trans             &trans                 &trans         &trans                                                       &kp F2
+&kp ESCAPE        &kp LC(LS(TAB))  &bluetooth      &notepad    &Doc_Open                                                &kp LC(KP_MINUS)  &kp LC(HOME)  &kp LG(LS(S))  &kp LC(END)  &kp BACKSPACE
+&kp HOME          &kp LEFT_ARROW   &kp DOWN_ARROW  &kp LC(N5)  &kp LC(SEMICOLON)  &kp LC(PAGE_UP)        &kp PAGE_UP    &kp LC(KP_PLUS)   &kp HOME      &kp UP_ARROW   &kp END      &kp ENTER
+&mt LEFT_SHIFT Z  &kp LC(X)        &kp LC(C)       &kp LC(V)   &trans             &kp LC(PAGE_DOWN)      &kp PAGE_DOWN  &trans            &kp LEFT      &kp DOWN       &kp RIGHT    &kp DELETE
+&trans            &trans           &trans          &trans      &trans             &trans                 &trans         &trans                                                      &kp F2
             >;
 
             sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
@@ -395,10 +395,10 @@
 
         MOUSE {
             bindings = <
-&kp_exit_AML Q  &kp_exit_AML W  &kp_exit_AML E  &kp_exit_AML R  &kp_exit_AML T                         &kp_exit_AML Y  &kp_exit_AML U     &kp_exit_AML I     &kp_exit_AML O     &kp_exit_AML P
-&kp_exit_AML A  &kp_exit_AML S  &kp_exit_AML D  &trans          &kp_exit_AML G  &trans      &exit_AML  &kp_exit_AML H  &mkp_exit_AML MB1  &mkp_exit_AML MB2  &kp_exit_AML L     &trans
-&trans          &kp_exit_AML X  &kp_exit_AML C  &kp_exit_AML V  &kp_exit_AML B  &trans      &exit_AML  &kp_exit_AML N  &trans             &mkp_exit_AML MB4  &mkp_exit_AML MB5  &trans
-&trans          &trans          &trans          &trans          &trans          &trans      &trans     &trans                                                                   &trans
+&kp_exit_AML Q  &kp_exit_AML W  &kp_exit_AML E  &kp_exit_AML R  &kp_exit_AML T                         &trans  &trans             &trans             &trans  &kp_exit_AML P
+&kp_exit_AML A  &kp_exit_AML S  &kp_exit_AML D  &trans          &kp_exit_AML G  &trans      &exit_AML  &trans  &mkp_exit_AML MB1  &mkp_exit_AML MB2  &trans  &trans
+&trans          &kp_exit_AML X  &kp_exit_AML C  &kp_exit_AML V  &kp_exit_AML B  &trans      &exit_AML  &trans  &trans             &trans             &trans  &trans
+&trans          &trans          &trans          &trans          &trans          &trans      &trans     &trans                                                &trans
             >;
         };
 
