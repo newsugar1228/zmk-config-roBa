@@ -268,7 +268,7 @@
         kp_equal: kp_equal {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LANGUAGE_2 &kp RS(CARET)>;
+            bindings = <&kp LANGUAGE_2 &kp RS(UNDERSCORE)>;
             label = "KP_EQUAL";
         };
 
@@ -375,10 +375,10 @@
 
         NUM {
             bindings = <
-&kp MINUS      &kp KP_NUMBER_7   &kp TILDE           &kp DOLLAR                &kp PERCENT                                                  &kp KP_MINUS     &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp BACKSPACE
-&kp INT_YEN    &kp EXCLAMATION   &muhenkan_underbar  &kp KP_EQUAL              &kp LC(COLON)  &kp LC(LA(KP_NUMBER_0))      &kp_equal        &kp KP_PLUS      &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp ENTER
-&kp AMPERSAND  &kp SINGLE_QUOTE  &kp ASTERISK        &kp RS(LEFT_PARENTHESIS)  &kp ASTRK      &kp RS(N0)                   &kp KP_ASTERISK  &kp KP_DIVIDE    &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp PERIOD
-&trans         &trans            &trans              &trans                    &trans         &trans                       &trans           &kp KP_NUMBER_0                                                     &kp COMMA
+&kp MINUS      &kp KP_NUMBER_7  &kp LS(EQUAL)       &kp DOLLAR                &kp PERCENT                                                  &kp KP_MINUS     &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp BACKSPACE
+&kp INT_YEN    &kp EXCLAMATION  &muhenkan_underbar  &kp KP_EQUAL              &kp LC(COLON)  &kp LC(LA(KP_NUMBER_0))      &kp_equal        &kp KP_PLUS      &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp ENTER
+&kp AMPERSAND  &kp AMPERSAND    &kp DOUBLE_QUOTES   &kp RS(LEFT_PARENTHESIS)  &kp ASTRK      &kp RS(N0)                   &kp KP_ASTERISK  &kp KP_DIVIDE    &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp PERIOD
+&trans         &trans           &trans              &trans                    &trans         &trans                       &trans           &kp KP_NUMBER_0                                                     &kp COMMA
             >;
         };
 
@@ -396,8 +396,8 @@
         MOUSE {
             bindings = <
 &kp_exit_AML Q  &kp_exit_AML W  &kp_exit_AML E  &kp_exit_AML R  &kp_exit_AML T                         &trans  &trans             &trans             &trans  &kp_exit_AML P
-&kp_exit_AML A  &kp_exit_AML S  &kp_exit_AML D  &trans          &kp_exit_AML G  &trans      &exit_AML  &trans  &mkp_exit_AML MB1  &mkp_exit_AML MB2  &trans  &trans
-&trans          &kp_exit_AML X  &kp_exit_AML C  &kp_exit_AML V  &kp_exit_AML B  &trans      &exit_AML  &trans  &trans             &trans             &trans  &trans
+&kp_exit_AML A  &kp_exit_AML S  &kp_exit_AML D  &trans          &kp_exit_AML G  &trans      &exit_AML  &trans  &mkp_exit_AML MB1  &mkp_exit_AML MB2  &trans  &mkp MB3
+&trans          &trans          &trans          &trans          &trans          &trans      &exit_AML  &trans  &trans             &trans             &trans  &mkp MB4
 &trans          &trans          &trans          &trans          &trans          &trans      &trans     &trans                                                &trans
             >;
         };
