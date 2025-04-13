@@ -137,7 +137,7 @@
         muhenkan_underbar: muhenkan_underbar {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LANGUAGE_2 &kp LS(MINUS)>;
+            bindings = <&kp LANGUAGE_2 &kp JP_UNDERSCORE>;
             label = "MUHENKAN_UNDERBAR";
         };
 
