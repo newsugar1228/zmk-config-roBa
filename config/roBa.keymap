@@ -104,6 +104,21 @@
             bindings = <&brackets>;
             key-positions = <29 30>;
         };
+
+        leftclick {
+            bindings = <&mkp MB1>;
+            key-positions = <30 31>;
+        };
+
+        rightclick {
+            bindings = <&mkp MB2>;
+            key-positions = <31 32>;
+        };
+
+        backclick {
+            bindings = <&mkp MB4>;
+            key-positions = <32 33>;
+        };
     };
 
     macros {
@@ -356,8 +371,8 @@
         default_layer {
             bindings = <
 &kp Q             &kp W         &kp E         &kp R               &kp T                                               &kp Y        &kp U             &kp I      &kp O    &kp P
-&kp A             &kp S         &kp D         &mt LEFT_SHIFT F    &kp G        &kp EXCLAMATION      &kp SINGLE_QUOTE  &kp H        &mt LEFT_SHIFT J  &kp K      &kp L    &lt 5 MINUS
-&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V               &kp B        &kp QMARK            &kp SEMICOLON     &kp N        &mt LCTRL M       &kp COMMA  &kp DOT  &mt LEFT_SHIFT SLASH
+&kp A             &kp S         &kp D         &mt LEFT_SHIFT F    &kp G        &kp QUESTION         &kp SINGLE_QUOTE  &kp H        &mt LEFT_SHIFT J  &kp K      &kp L    &lt 5 MINUS
+&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V               &kp B        &kp EXCLAMATION      &kp SEMICOLON     &kp N        &mt LCTRL M       &kp COMMA  &kp DOT  &mt LEFT_SHIFT SLASH
 &kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt 2 INT_MUHENKAN  &lt 3 SPACE  &lt 1 DEL            &kp BACKSPACE     &lt 3 ENTER                                        &muhenkan_at
             >;
 
@@ -366,10 +381,10 @@
 
         FUNCTION {
             bindings = <
-&trans  &trans      &trans  &kp F11  &kp F12                       &trans  &trans  &trans  &trans  &trans
-&trans  &kp F6      &kp F7  &kp F8   &kp F9   &kp F10      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp LA(F1)  &kp F2  &kp F3   &kp F4   &kp F5       &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans      &trans  &trans   &trans   &trans       &trans  &trans                          &trans
+&trans  &trans      &trans  &kp F11  &kp F12                       &trans  &trans            &trans  &trans             &trans
+&trans  &kp F6      &kp F7  &kp F8   &kp F9   &kp F10      &trans  &trans  &trans            &trans  &trans             &trans
+&trans  &kp RA(F1)  &kp F2  &kp F3   &kp F4   &kp F5       &trans  &trans  &kp LG(LS(LEFT))  &trans  &kp LG(LS(RIGHT))  &trans
+&trans  &trans      &trans  &trans   &trans   &trans       &trans  &trans                                               &trans
             >;
         };
 
@@ -395,10 +410,10 @@
 
         MOUSE {
             bindings = <
-&kp_exit_AML Q  &kp_exit_AML W  &kp_exit_AML E  &kp_exit_AML R  &trans                                 &trans  &trans             &trans             &trans  &trans
-&kp_exit_AML A  &kp_exit_AML S  &kp_exit_AML D  &trans          &kp_exit_AML G  &trans      &exit_AML  &trans  &mkp_exit_AML MB1  &mkp_exit_AML MB2  &trans  &trans
-&trans          &trans          &trans          &trans          &trans          &trans      &exit_AML  &trans  &trans             &trans             &trans  &mkp MB4
-&trans          &trans          &trans          &trans          &trans          &trans      &trans     &trans                                                &mkp MB5
+&kp_exit_AML Q  &kp_exit_AML W  &kp_exit_AML E  &kp_exit_AML R  &trans                                 &trans  &trans  &trans  &trans  &trans
+&kp_exit_AML A  &kp_exit_AML S  &kp_exit_AML D  &trans          &kp_exit_AML G  &trans      &exit_AML  &trans  &trans  &trans  &trans  &trans
+&trans          &trans          &trans          &trans          &trans          &trans      &exit_AML  &trans  &trans  &trans  &trans  &trans
+&trans          &trans          &trans          &trans          &trans          &trans      &trans     &trans                          &trans
             >;
         };
 
