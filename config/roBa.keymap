@@ -119,6 +119,16 @@
             bindings = <&mkp MB4>;
             key-positions = <32 33>;
         };
+
+        windowslock {
+            bindings = <&kp LG(L)>;
+            key-positions = <3 4>;
+        };
+
+        teamsedit {
+            bindings = <&kp LC(LS(X))>;
+            key-positions = <41 30>;
+        };
     };
 
     macros {
@@ -287,6 +297,20 @@
             label = "KP_EQUAL";
         };
 
+        muhenkan_underbar_mac: muhenkan_underbar_mac {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LANGUAGE_2 &kp AT_SIGN>;
+            label = "MUHENKAN_UNDERBAR_MAC";
+        };
+
+        bt2toMAC: bt2toMAC {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&bt BT_SEL 1 &to 7>;
+            label = "BT2TOMAC";
+        };
+
         // Commented out as currently unused, but may be used in the future 
         // mod_exit_AML: mod_exit_AML {
         //     compatible = "zmk,behavior-macro-one-param";
@@ -426,12 +450,30 @@
             >;
         };
 
-        layer_6 {
+        bluetooth {
             bindings = <
-&trans  &trans  &trans  &trans  &kp KP_NUMLOCK                      &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
-&trans  &trans  &trans  &trans  &trans          &trans      &trans  &trans        &trans        &trans        &trans        &trans
-&trans  &trans  &trans  &trans  &trans          &trans      &to 0   &trans        &trans        &trans        &trans        &bt BT_CLR
-&trans  &trans  &trans  &trans  &trans          &trans      &trans  &trans                                                  &bt BT_CLR_ALL
+&trans  &trans  &trans  &trans  &kp KP_NUMLOCK                           &bt BT_SEL 0  &bt2toMAC  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
+&trans  &trans  &trans  &trans  &trans          &bootloader      &to 7   &trans        &trans     &trans        &trans        &trans
+&trans  &trans  &trans  &trans  &trans          &trans           &to 0   &trans        &trans     &trans        &trans        &trans
+&trans  &trans  &trans  &trans  &trans          &trans           &trans  &trans                                               &trans
+            >;
+        };
+
+        Mac_layer {
+            bindings = <
+&kp Q     &kp W     &kp E     &kp R     &kp T                                    &kp Y        &kp U  &kp I      &kp O    &kp P
+&kp A     &kp S     &kp D     &kp F     &kp G      &kp LS(QMARK)      &kp COLON  &kp H        &kp J  &kp K      &kp L    &kp MINUS
+&kp X     &kp X     &kp C     &kp V     &kp B      &kp LS(EXCL)       &kp SEMI   &kp N        &kp M  &kp COMMA  &kp DOT  &kp FSLH
+&kp LGUI  &kp LALT  &kp LALT  &lt 8 F7  &kp SPACE  &lt 1 DELETE       &kp BSPC   &lt 3 ENTER                             &muhenkan_underbar_mac
+            >;
+        };
+
+        NUM_MAC {
+            bindings = <
+&kp LG(LSHFT)  &kp LS(POUND)  &kp RSHFT      &kp LS(DLLR)   &kp LS(PRCNT)                                     &kp MINUS     &kp N7  &kp N8  &kp N9  &kp BSPC
+&kp LS(PIPE)   &kp LS(EXCL)   &kp LS(UNDER)  &kp LG(COLON)  &kp LG(SEMI)   &kp LC(LA(N0))      &kp LS(EQUAL)  &kp LS(PLUS)  &kp N4  &kp N5  &kp N6  &kp RET
+&kp LS(DQT)    &kp LS(SQT)    &kp LS(STAR)   &kp LS(LPAR)   &kp LS(RPAR)   &kp LS(RPAR)        &kp LS(STAR)   &kp FSLH      &kp N1  &kp N2  &kp N3  &kp DOT
+&trans         &trans         &trans         &trans         &trans         &trans              &trans         &kp N0                                &kp COMMA
             >;
         };
     };
