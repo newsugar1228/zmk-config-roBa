@@ -122,7 +122,7 @@
 
         windowslock {
             bindings = <&kp LG(L)>;
-            key-positions = <3 4>;
+            key-positions = <8 9>;
         };
 
         teamsedit {
@@ -154,7 +154,9 @@
                 <&macro_wait_time 300>,
                 <&kp LG(R)>,
                 <&macro_wait_time 300>,
-                <&kp LC(V) &kp KP_ENTER>;
+                <&kp LC(V)>,
+                <&macro_wait_time 300>,
+                <&kp KP_ENTER>;
 
             label = "DOC_OPEN";
         };
