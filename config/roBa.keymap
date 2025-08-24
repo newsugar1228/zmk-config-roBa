@@ -86,7 +86,7 @@
         };
 
         bluetoothGo {
-            bindings = <&to 6>;
+            bindings = <&to 7>;
             key-positions = <32 42>;
         };
 
@@ -199,7 +199,7 @@
                 <&macro_release>,
                 <&macro_param_1to1 &mkp MACRO_PLACEHOLDER>,
                 <&macro_tap>,
-                <&sl 4>;
+                <&sl 5>;
 
             label = "MKP_EXIT_AML";
         };
@@ -223,7 +223,7 @@
             wait-ms = <0>;
             tap-ms = <0>;
             #binding-cells = <0>;
-            bindings = <&tog_off 4>;
+            bindings = <&tog_off 5>;
             label = "exit_AML";
         };
 
@@ -309,7 +309,7 @@
         bt2toMAC: bt2toMAC {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&bt BT_SEL 1 &to 7>;
+            bindings = <&bt BT_SEL 1 &to 1>;
             label = "BT2TOMAC";
         };
 
@@ -397,12 +397,21 @@
         default_layer {
             bindings = <
 &kp Q             &kp W         &kp E         &kp R               &kp T                                               &kp Y        &kp U             &kp I      &kp O    &kp P
-&kp A             &kp S         &kp D         &mt LEFT_SHIFT F    &kp G        &kp QUESTION         &kp SINGLE_QUOTE  &kp H        &mt LEFT_SHIFT J  &kp K      &kp L    &lt 5 MINUS
+&kp A             &kp S         &kp D         &mt LEFT_SHIFT F    &kp G        &kp QUESTION         &kp SINGLE_QUOTE  &kp H        &mt LEFT_SHIFT J  &kp K      &kp L    &lt 6 MINUS
 &mt LEFT_SHIFT Z  &kp X         &kp C         &kp V               &kp B        &kp EXCLAMATION      &kp SEMICOLON     &kp N        &mt LCTRL M       &kp COMMA  &kp DOT  &mt LEFT_SHIFT SLASH
-&kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt 2 INT_MUHENKAN  &lt 3 SPACE  &lt 1 DEL            &kp BACKSPACE     &lt 3 ENTER                                        &muhenkan_at
+&kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt 3 INT_MUHENKAN  &lt 4 SPACE  &lt 2 DEL            &kp BACKSPACE     &lt 4 ENTER                                        &muhenkan_at
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
+        };
+
+        Mac_layer {
+            bindings = <
+&kp Q                 &kp W     &kp E             &kp R             &kp T                                    &kp Y        &kp U               &kp I      &kp O    &kp P
+&kp A                 &kp S     &kp D             &mt LEFT_SHIFT F  &kp G      &kp LS(QMARK)      &kp COLON  &kp H        &mt LEFT_SHIFT J    &kp K      &kp L    &trans
+&mt X LEFT_SHIFT      &kp X     &kp C             &kp V             &kp B      &kp LS(EXCL)       &kp SEMI   &kp N        &mt LEFT_COMMAND M  &kp COMMA  &kp DOT  &mt LEFT_SHIFT SLASH
+&kp LG(LEFT_CONTROL)  &kp LALT  &kp LEFT_COMMAND  &lt 8 F7          &kp SPACE  &lt 2 DELETE       &kp BSPC   &lt 9 ENTER                                          &muhenkan_underbar_mac
+            >;
         };
 
         FUNCTION {
@@ -455,18 +464,9 @@
         bluetooth {
             bindings = <
 &trans  &trans  &trans  &trans  &kp KP_NUMLOCK                           &bt BT_SEL 0  &bt2toMAC  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
-&trans  &trans  &trans  &trans  &trans          &bootloader      &to 7   &trans        &trans     &trans        &trans        &trans
+&trans  &trans  &trans  &trans  &trans          &bootloader      &to 1   &trans        &trans     &trans        &trans        &trans
 &trans  &trans  &trans  &trans  &trans          &trans           &to 0   &trans        &trans     &trans        &trans        &trans
 &trans  &trans  &trans  &trans  &trans          &trans           &trans  &trans                                               &trans
-            >;
-        };
-
-        Mac_layer {
-            bindings = <
-&kp Q                 &kp W     &kp E             &kp R             &kp T                                    &kp Y        &kp U               &kp I      &kp O    &kp P
-&kp A                 &kp S     &kp D             &mt LEFT_SHIFT F  &kp G      &kp LS(QMARK)      &kp COLON  &kp H        &mt LEFT_SHIFT J    &kp K      &kp L    &lt 5 MINUS
-&mt X LEFT_SHIFT      &kp X     &kp C             &kp V             &kp B      &kp LS(EXCL)       &kp SEMI   &kp N        &mt LEFT_COMMAND M  &kp COMMA  &kp DOT  &mt LEFT_SHIFT SLASH
-&kp LG(LEFT_CONTROL)  &kp LALT  &kp LEFT_COMMAND  &lt 8 F7          &kp SPACE  &lt 1 DELETE       &kp BSPC   &lt 9 ENTER                                          &muhenkan_underbar_mac
             >;
         };
 
