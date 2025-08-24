@@ -60,6 +60,14 @@
         automouse-layer = <4>;
         scroll-layers = <5>;
     };
+
+       /* ▼ここから追加：XY入替＋片軸反転（第一候補） */
+        transform: pointing_transform {
+            compatible = "zmk,pointing-transform";
+            swap-xy;     /* XY入替 */
+            invert-x;    /* 片軸だけ反転。合わなければ invert-y に変更 */
+        };
+        /* ▲ここまで追加 */
 };
 
 
