@@ -86,7 +86,7 @@
         };
 
         bluetoothGo {
-            bindings = <&to 9>;
+            bindings = <&to 6>;
             key-positions = <32 42>;
         };
 
@@ -455,7 +455,7 @@
         bluetooth {
             bindings = <
 &trans  &trans  &trans  &trans  &kp KP_NUMLOCK                           &bt BT_SEL 0  &bt2toMAC  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
-&trans  &trans  &trans  &trans  &trans          &bootloader      &to 8   &trans        &trans     &trans        &trans        &trans
+&trans  &trans  &trans  &trans  &trans          &bootloader      &to 7   &trans        &trans     &trans        &trans        &trans
 &trans  &trans  &trans  &trans  &trans          &trans           &to 0   &trans        &trans     &trans        &trans        &trans
 &trans  &trans  &trans  &trans  &trans          &trans           &trans  &trans                                               &trans
             >;
