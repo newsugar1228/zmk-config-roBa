@@ -32,9 +32,9 @@
 
 //
 
-#define MOUSE 4
-#define SCROLL 5
-#define NUM 6
+#define MOUSE 5
+#define SCROLL 6
+#define NUM 7
 
 &mt {
     flavor = "balanced";
