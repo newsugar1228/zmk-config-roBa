@@ -122,12 +122,12 @@
 
         windowslock {
             bindings = <&kp LG(L)>;
-            key-positions = <8 9>;
+            key-positions = <16 28>;
         };
 
         teamsedit {
             bindings = <&kp LC(LS(X))>;
-            key-positions = <41 30>;
+            key-positions = <30 29>;
         };
     };
 
@@ -396,10 +396,10 @@
 
         default_layer {
             bindings = <
-&kp Q             &kp W         &kp E         &kp R               &kp T                                               &kp Y        &kp U             &kp I           &kp O    &kp P
-&kp A             &kp S         &kp D         &mt LEFT_SHIFT F    &kp G        &kp QUESTION         &kp SINGLE_QUOTE  &kp H        &mt LEFT_SHIFT J  &mt LEFT_WIN K  &kp L    &lt 5 MINUS
-&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V               &kp B        &kp EXCLAMATION      &kp SEMICOLON     &kp N        &mt LCTRL M       &kp COMMA       &kp DOT  &mt LEFT_SHIFT SLASH
-&kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt 1 INT_MUHENKAN  &lt 2 SPACE  &lt 3 DEL            &kp BACKSPACE     &lt 2 ENTER                                             &muhenkan_at
+&kp Q             &kp W         &kp E         &kp R               &kp T                                               &kp Y        &kp U             &kp I      &kp O           &kp P
+&kp A             &kp S         &kp D         &mt LEFT_SHIFT F    &kp G        &kp QUESTION         &kp SINGLE_QUOTE  &kp H        &mt LEFT_SHIFT J  &kp K      &mt L LEFT_WIN  &lt 5 MINUS
+&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V               &kp B        &kp EXCLAMATION      &kp SEMICOLON     &kp N        &mt LCTRL M       &kp COMMA  &kp DOT         &mt LEFT_SHIFT SLASH
+&kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt 1 INT_MUHENKAN  &lt 2 SPACE  &lt 3 DEL            &kp BACKSPACE     &lt 2 ENTER                                               &muhenkan_at
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
@@ -454,10 +454,10 @@
 
         bluetooth {
             bindings = <
-&trans  &trans  &trans  &trans  &kp KP_NUMLOCK                           &bt BT_SEL 0  &bt2toMAC  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
-&trans  &trans  &trans  &trans  &trans          &bootloader      &to 7   &trans        &trans     &trans        &trans        &trans
-&trans  &trans  &trans  &trans  &trans          &trans           &to 0   &trans        &trans     &trans        &trans        &trans
-&trans  &trans  &trans  &trans  &trans          &trans           &trans  &trans                                               &trans
+&bt BT_CLR_ALL  &trans  &trans  &trans  &kp KP_NUMLOCK                           &bt BT_SEL 0  &bt2toMAC  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
+&trans          &trans  &trans  &trans  &trans          &bootloader      &to 7   &trans        &trans     &trans        &trans        &trans
+&trans          &trans  &trans  &trans  &trans          &trans           &to 0   &trans        &trans     &trans        &trans        &trans
+&trans          &trans  &trans  &trans  &trans          &trans           &trans  &trans                                               &trans
             >;
         };
 
