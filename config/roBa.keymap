@@ -127,7 +127,7 @@
 
         teamsedit {
             bindings = <&kp LC(LS(X))>;
-            key-positions = <30 29>;
+            key-positions = <22 23>;
         };
     };
 
