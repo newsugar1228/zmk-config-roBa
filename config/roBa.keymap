@@ -32,9 +32,9 @@
 
 //
 
-#define MOUSE 5
-#define SCROLL 6
-#define NUM 7
+#define MOUSE 4
+#define SCROLL 5
+#define NUM 1
 
 &mt {
     flavor = "balanced";
@@ -309,7 +309,7 @@
         bt2toMAC: bt2toMAC {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&bt BT_SEL 1 &to 8>;
+            bindings = <&bt BT_SEL 1 &to 7>;
             label = "BT2TOMAC";
         };
 
