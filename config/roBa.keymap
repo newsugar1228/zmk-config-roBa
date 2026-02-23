@@ -151,11 +151,11 @@
             #binding-cells = <0>;
             bindings =
                 <&kp LC(C)>,
-                <&macro_wait_time 300>,
+                <&macro_wait_time 700>,
                 <&kp LG(R)>,
-                <&macro_wait_time 300>,
+                <&macro_wait_time 700>,
                 <&kp LC(V)>,
-                <&macro_wait_time 300>,
+                <&macro_wait_time 700>,
                 <&kp KP_ENTER>;
 
             label = "DOC_OPEN";
@@ -275,7 +275,7 @@
             #binding-cells = <0>;
             bindings =
                 <&kp LEFT_WIN>,
-                <&macro_wait_time 500>,
+                <&macro_wait_time 700>,
                 <&kp B &kp L &kp U &kp E &kp T &kp O &kp O &kp T &kp H &kp KP_ENTER>;
 
             label = "BLUETOOTH";
@@ -311,6 +311,13 @@
             #binding-cells = <0>;
             bindings = <&bt BT_SEL 1 &to 7>;
             label = "BT2TOMAC";
+        };
+
+        key000: key000 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp KP_NUMBER_0 &kp KP_NUMBER_0 &kp KP_NUMBER_0>;
+            label = "KEY000";
         };
 
         // Commented out as currently unused, but may be used in the future 
@@ -410,16 +417,16 @@
 &kp MINUS    &kp HASH         &kp LS(EQUAL)       &kp DOLLAR           &kp PERCENT                                                             &kp KP_MINUS     &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp BACKSPACE
 &kp INT_YEN  &kp EXCLAMATION  &muhenkan_underbar  &kp LC(KP_MULTIPLY)  &kp LC(COLON)             &kp LC(LA(KP_NUMBER_0))      &kp_equal        &kp KP_PLUS      &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp ENTER
 &kp AT_SIGN  &kp AMPERSAND    &kp DOUBLE_QUOTES   &kp ASTERISK         &kp LS(LEFT_PARENTHESIS)  &kp RS(N0)                   &kp KP_ASTERISK  &kp KP_DIVIDE    &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp PERIOD
-&trans       &trans           &trans              &trans               &trans                    &trans                       &trans           &kp KP_NUMBER_0                                                     &kp COMMA
+&trans       &trans           &trans              &trans               &trans                    &trans                       &key000          &kp KP_NUMBER_0                                                     &kp COMMA
             >;
         };
 
         ARROW {
             bindings = <
-&kp ESCAPE        &kp LC(LS(TAB))  &kp LC(F1)  &kp LC(R)   &Doc_Open                                                &kp LC(KP_MINUS)  &kp LC(HOME)  &kp LG(LS(S))  &kp LC(END)  &kp BACKSPACE
-&kp HOME          &kp LC(S)        &kp LC(D)   &kp LC(N5)  &kp LC(SEMICOLON)  &kp LC(PAGE_UP)        &kp PAGE_UP    &kp LC(KP_PLUS)   &kp HOME      &kp UP_ARROW   &kp END      &kp ENTER
-&mt LEFT_SHIFT Z  &kp LC(X)        &kp LC(C)   &kp LC(V)   &kp LC(B)          &kp LC(PAGE_DOWN)      &kp PAGE_DOWN  &kp LC(LS(N))     &kp LEFT      &kp DOWN       &kp RIGHT    &kp DELETE
-&trans            &trans           &trans      &trans      &trans             &trans                 &trans         &trans                                                      &kp F2
+&kp ESCAPE           &kp LC(LS(TAB))  &kp LC(F1)  &kp LC(R)   &Doc_Open                                                &kp LC(KP_MINUS)  &kp LC(HOME)  &kp LG(LS(S))  &kp LC(END)  &kp BACKSPACE
+&kp LA(PRINTSCREEN)  &kp LC(S)        &kp LC(D)   &kp LC(N5)  &kp LC(SEMICOLON)  &kp LC(PAGE_UP)        &kp PAGE_UP    &kp LC(KP_PLUS)   &kp HOME      &kp UP_ARROW   &kp END      &kp ENTER
+&mt LEFT_SHIFT Z     &kp LC(X)        &kp LC(C)   &kp LC(V)   &kp LC(B)          &kp LC(PAGE_DOWN)      &kp PAGE_DOWN  &kp LC(LS(N))     &kp LEFT      &kp DOWN       &kp RIGHT    &kp DELETE
+&trans               &trans           &trans      &trans      &trans             &trans                 &trans         &trans                                                      &kp F2
             >;
 
             sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
