@@ -417,7 +417,7 @@
 &kp MINUS    &kp HASH         &kp LS(EQUAL)       &kp DOLLAR           &kp PERCENT                                                             &kp KP_MINUS     &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp BACKSPACE
 &kp INT_YEN  &kp EXCLAMATION  &muhenkan_underbar  &kp LC(KP_MULTIPLY)  &kp LC(COLON)             &kp LC(LA(KP_NUMBER_0))      &kp_equal        &kp KP_PLUS      &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp ENTER
 &kp AT_SIGN  &kp AMPERSAND    &kp DOUBLE_QUOTES   &kp ASTERISK         &kp LS(LEFT_PARENTHESIS)  &kp RS(N0)                   &kp KP_ASTERISK  &kp KP_DIVIDE    &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp PERIOD
-&trans       &trans           &trans              &trans               &trans                    &trans                       &key000          &kp KP_NUMBER_0                                                     &kp COMMA
+&trans       &trans           &trans              &trans               &trans                    &trans                       &trans           &kp KP_NUMBER_0                                                     &kp COMMA
             >;
         };
 
